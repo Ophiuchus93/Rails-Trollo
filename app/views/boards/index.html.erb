@@ -1,0 +1,12 @@
+<h1>Your Boards</h1>
+<%= link_to "Add Board", new_board_path, class: "ui purple button inverted" %>
+
+<hr />
+<h2><%= @boards.length <= 0 ? "No Boards" : "" %></h2> 
+<ul>
+<% @boards.each do |board| %>
+  <h3><li><%= link_to board.name, board %></li></h3>
+</ul>
+<% end %>
+
+

@@ -1,0 +1,11 @@
+
+<div class="ui form">
+<%= form_with(model: @board, local: true ) do |f| %>
+<div class="field">
+  <h1>Board <%= f.label :name %></h1>
+  <%= f.text_field :name, required: true, placeholder: "Board Name" %>
+</div>
+<hr />
+<%= f.submit nil, class: "ui green button inverted" %>
+<% end %>
+</div>

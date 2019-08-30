@@ -1,0 +1,10 @@
+<h1>Click a List to View</h1>
+<hr />
+<h2><%= @lists.length <= 0 ? "No Lists" : "" %></h2> 
+<% @lists.each do |list| %>
+<h3><%= link_to list.name, [@board, list] %></h3>
+<hr />
+<%= link_to "Create List", new_board_list_path(@board), class: "ui teal button inverted" %>
+<%= link_to "Remove List", [@board, @list], method: :delete, class: "ui red button inverted" %>
+<% end %>
+
