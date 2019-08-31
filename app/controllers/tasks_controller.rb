@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_list
+
   def index
   end
 
@@ -11,10 +12,10 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = @list.task.new(task_params)
+    @task = @list.tasks.new(task_params)
 
     if @task.save
-      redirect_to list_task_path(@board.list_id, @board)
+      redirect_to list_task_path(@list.board_id, @list)
     else
       render :new
     end

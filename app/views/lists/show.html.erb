@@ -4,7 +4,12 @@
 <hr />
 <h3 class="ui teal header"><%= @list.descript %></h3>
 <hr />
+<h3><% @list.tasks.each do |task| %></h3>
+  <%= render 'tasks/task', {task: task} %>
+  <% end %>
+  <hr / >
 <%= link_to "Add Task", new_list_task_path(@list), class: "ui teal button inverted" %>
 <%= link_to "Edit Description", edit_board_list_path(@board, @list), class: "ui pink button inverted" %>
+<%= link_to "Back to Lists", board_lists_path(@board), class: "ui violet button inverted" %>
 <%= link_to "Back to the Board" , (@board), class: "ui blue button inverted" %>
 
